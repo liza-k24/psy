@@ -5,12 +5,12 @@
     font-weight: normal;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Lato';
     src: url(../src/fonts/Lato-Bold.ttf) format('truetype');
     font-weight: bold;
     font-style: normal;
-}
+} */
 
 * {
     margin: 0;
@@ -41,9 +41,10 @@ header {
 
 .logo {
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 700;
     color: #000000;
-    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .navigation a {

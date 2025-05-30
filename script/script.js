@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Код для форматирования номера телефона
     const phoneInput = document.querySelector('.phone');
-
-    // Проверяем, существует ли поле телефона на текущей странице, прежде чем добавлять обработчики
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, ''); // Удаляем все, кроме цифр
@@ -39,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Обработчик для кнопки "Войти" на главной странице (index.html)
+    // Убедись, что кнопка с классом .btnLogin-popup существует на index.html
     const btnLoginPopup = document.querySelector('.btnLogin-popup');
     if (btnLoginPopup) {
         btnLoginPopup.addEventListener('click', function() {
@@ -46,21 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Обработчик для кнопки "Зарегистрироваться" на странице входа (login.html)
-    const registerLink = document.querySelector('.register-link');
-    if (registerLink) {
-        registerLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Предотвращаем стандартное действие ссылки (переход по href="#")
-            window.location.href = 'register.html'; // Перенаправляем на страницу register.html
-        });
-    }
-
-    // Обработчик для ссылки "Уже есть аккаунт?" на странице регистрации (register.html)
-    const resetLink = document.querySelector('.reset');
-    if (resetLink) {
-        resetLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Предотвращаем стандартное действие ссылки
-            window.location.href = 'login.html'; // Перенаправляем обратно на страницу login.html
-        });
-    }
+    // Комментарий: для ссылок .register-link и .reset
+    // Теперь они перенаправляются через атрибут href в HTML,
+    // так что JavaScript для них не требуется и удален.
 });
