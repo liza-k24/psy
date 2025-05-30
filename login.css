@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Lato';
+    src: url(../src/fonts/Lato-Regular.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../src/fonts/Lato-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 152px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000000;
+    user-select: none;
+}
+
+.navigation .btnLoginPsy-popup {
+    width: 251px;
+    height: 59px;
+    border-radius: 15px;
+    border: 2px solid #a4d6ff;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #000;
+    font-weight: 500;
+    padding: 0;
+    margin-left: 93px;
+    transition: .5s;
+} 
+
+.navigation .btnLoginPsy-popup:hover {
+    background: #a4d6ff;
+}
+
+.form-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    width: 100%;
+    /* position: relative;  */
+}
+
+.form-box-login {
+    position: relative;
+    width: 600px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding-top: 8%;
+}
+
+.form-box-login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+h2 {
+    font-size: 32px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+
+.email {
+    width: 540px;
+    height: 92px;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid #66B0F0;
+    outline: none;
+    font-size: 24px;
+    font-weight: 500;
+    /* margin-left: 30px; */
+    padding: 0 30px; 
+    margin-bottom: 35px; 
+}
+
+.email::placeholder {
+    color: #3c3c3c; 
+    opacity: 0.5; 
+    /* text-align: center; */
+}
+
+.btn-popup {
+    width: 540px;
+    height: 92px;
+    background: #66B0F0;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    padding: 0;
+    /* margin-left: 30px; */
+    margin-bottom: 20px;
+}
+
+.register-forgot {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    width: 540px;
+}
+
+.register-forgot .forgot-link {
+    color: #000;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.register-forgot .forgot-link:hover {
+    color: #0641b7;
+    text-decoration: underline;
+}
+
+.register-forgot .register-link {
+    color: #0641b7;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.register-forgot .register-link:hover{
+    text-decoration: underline;
+}
+
+.puzzle-image {
+    position: absolute; 
+    left: 0; 
+    top: 50%; 
+    z-index: -1;
+}
