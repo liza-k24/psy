@@ -1,38 +1,78 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Код для форматирования номера телефона
     const phoneInput = document.querySelector('.phone');
+
+    // Проверяем, существует ли поле телефона на текущей странице, прежде чем добавлять обработчики
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, ''); // Удаляем все, кроме цифр
-            let formattedValue = '';
+
+            // Если пользователь удалил все символы, кроме "+7", то начинаем с чистого листа
+            if (value.startsWith('7') && value.length === 1) {
+                value = ''; // Если осталась только 7, обнуляем, чтобы пользователь мог начать сначала
+            } else if (!value.startsWith('7') && value.length > 0) {
+                // Если пользователь начал вводить не с 7, или это не российская 7-ка, обнуляем
+                value = '';
+            } else if (value.startsWith('7') && value.length > 1) {
+                // Если начинается с 7, то убираем ее для дальнейшего форматирования
+                value = value.substring(1); 
+            } else {
+                value = ''; // Если пустая строка или что-то не то
+            }
+
+            let formattedValue = '+7';
 
             if (value.length > 0) {
-                formattedValue = '+7';
-                if (value.length > 1) {
-                    formattedValue += '(' + value.substring(1, Math.min(4, value.length));
+                // Первый блок из 3 цифр
+                formattedValue += '(' + value.substring(0, Math.min(3, value.length));
+                if (value.length > 3) {
+                    formattedValue += ')';
                 }
-                if (value.length >= 4) {
-                    formattedValue += ')-';
-                    formattedValue += value.substring(4, Math.min(6, value.length));
+
+                // Второй блок из 3 цифр
+                if (value.length > 3) {
+                    formattedValue += '-' + value.substring(3, Math.min(6, value.length));
+                    if (value.length > 6) {
+                        formattedValue += '';
+                    }
                 }
-                if (value.length >= 6) {
-                    formattedValue += '-';
-                    formattedValue += value.substring(6, Math.min(8, value.length));
+
+                // Третий блок из 2 цифр
+                if (value.length > 6) {
+                    formattedValue += '-' + value.substring(6, Math.min(8, value.length));
+                    if (value.length > 8) {
+                        formattedValue += '';
+                    }
                 }
+
+                // Четвертый блок из 2 цифр
+                if (value.length > 8) {
+                    formattedValue += '-' + value.substring(8, Math.min(10, value.length));
+                    if (value.length > 10) {
+                        formattedValue += ''; // На случай, если каким-то образом введут больше 10 цифр
+                    }
+                }
+            } else {
+                formattedValue = ''; // Если нет цифр, поле должно быть пустым
             }
+
             e.target.value = formattedValue;
         });
 
+        // Обработчик focus - устанавливает "+7(" только если поле пустое
         phoneInput.addEventListener('focus', function(e) {
-            if (!e.target.value) {
+            if (e.target.value.length === 0) {
                 e.target.value = '+7(';
             }
         });
 
+        // Обработчик blur - убирает "+7(" если пользователь ничего не ввел после
         phoneInput.addEventListener('blur', function(e) {
-            // Если пользователь ввел только "+7(", то очищаем поле
-            if (e.target.value === '+7(' || e.target.value === '+7()-' || e.target.value === '+7()-(') {
-                e.target.value = '';
+            // Удаляем все, кроме цифр, включая +7 в начале
+            const cleanValue = e.target.value.replace(/\D/g, ''); 
+            // Если после удаления всех символов, кроме цифр, осталось только "7"
+            // (т.е., пользователь ввел только "+7(" и больше ничего)
+            if (cleanValue === '7' || cleanValue === '') { 
+                e.target.value = ''; // Очищаем поле
             }
         });
     }
@@ -47,6 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Комментарий: для ссылок .register-link и .reset
-    // Теперь они перенаправляются через атрибут href в HTML,
+    // Они перенаправляются через атрибут href в HTML,
     // так что JavaScript для них не требуется и удален.
 });
