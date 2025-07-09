@@ -126,7 +126,7 @@ header {
 .main-content {
     padding-top: 324px; 
     padding-right: 99px; 
-    padding-bottom: 193px; 
+    padding-bottom: 0; 
     padding-left: 152px; 
     position: relative; 
 }
@@ -175,7 +175,6 @@ header {
     color: #1e212c;
 }
 
-
 .main-image {
     position: absolute;
     /* min-width: 350px; */
@@ -216,6 +215,281 @@ header {
     margin-right: 12px;
 }
 
-.blue-block {
+/* .blue-block {
     color: #f2faff;
+} */
+
+.main_about {
+    display: flex;
+    position: relative;
+    background-color: #f2faff;
+    padding-top: 179px;
+    padding-bottom: 180px;
+    /* max-width: 1200px; */
+    /* justify-content: space-between; */
+}
+
+.about_mentalhealth {
+    padding-top: 0; 
+    padding-right: 32px; 
+    padding-bottom: 0; 
+    padding-left: 343px; 
+    position: relative; 
+}
+
+.about_heading {
+    margin-bottom: 25px;
+}
+
+.heading_subtitle {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 150%;
+    letter-spacing: 1px;
+    color: #1e212c;
+    margin-bottom: 8px;
+}
+
+.heading_title {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #1e212c;
+    margin-top: 8px;
+}
+
+.about_text {
+    max-width: 600px;
+    max-height: 156px;
+    padding-right: 32px; 
+}
+
+.about_paragraph {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #1e212c;
+    margin-top: 8px;
+}
+
+.about_paragpaph-mini {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #1e212c;
+    margin-top: 26px;
+    width: 600px;
+    height: 156px;
+}
+
+.about-btn {
+    margin-top: 80px;
+    padding-top: 26px;
+    max-width: 281px;
+}
+
+.about-button {
+    width: 281px;
+    height: 59px;
+    border-radius: 15px;
+    border: transparent;
+    background-color: #a4d6ff;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #000;
+    font-weight: 500;
+    padding: 0;
+    transition: .5s;
+}
+
+.about-button:hover {
+    background: #fff;
+    border: 2px solid #a4d6ff;
+}
+
+.about-image {
+    margin-top: 0;
+    position: absolute;
+    top: 1212px;
+    right: 178px;
+    width: calc(1920px - 976px - 178px);
+    height: auto;
+}
+
+.puzzle-image {
+    position: absolute; 
+    left: 0; 
+    top: 1354px; 
+}
+
+.psy_help {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #f2faff;
+    /* padding-bottom: 180px; */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.help {
+    max-width: 797px;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 138px;
+}
+
+.help_heading {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1px;
+    color: #1e212c;
+}
+
+.frames {
+    display: flex;
+    flex-wrap: wrap; /* чтобы переходили на новую строку при необходимости */
+    justify-content: center; /* выравнивание по центру */
+    padding: 0 0 38px 264px;
+    gap: 12px;
+}
+
+.frame_1, .frame_3, .frame_5 {
+    border: none;
+    border-radius: 15px;
+    background-color: #83c7ff;
+    gap: 10px;
+}
+
+.frame_2, .frame_4, .frame_6 {
+    border: 2px solid #0641B7;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.frame_text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 1px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 42.5px;
+}
+
+.other_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 38px;
+    padding-bottom: 138px;
+}
+
+.other {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #000;
+    opacity: 50%;
+}
+
+.main_team {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #f2faff;
+    padding-bottom: 180px;
+    align-items: center;
+}
+
+.team_container {
+    display: flex;
+}
+
+.team_headings {
+    display: flex;
+}
+
+.team_info {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1px;
+    align-items: center;
+    color: #1e212c;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+}
+
+.team_heading {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 130%;
+    letter-spacing: 0%;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.team_slider {
+}
+
+.social_sliders {
+    flex-direction: row;
+
+}
+
+.slider {
+    border: none;
+    border-radius: 15px;
+    width: 285px;
+    height: 340px;
+    background-color: #66b0f0;
+}
+
+.slider-heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0%;
+    align-items: center;
+}
+
+.slider-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
+    align-items: center;
+    color: #7b7ab0;
+}
+
+.choice_btn {
+    width: 736px;
+    height: 92px;
+    border-radius: 15px;
+    border: none;
+    background-color: #0641B7;
+    outline: none;
+    cursor: pointer;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0;
+    margin-left: 0;
+    transition: .5s;
+}
+
+.choice_btn:hover {
+    background: #a4d6ff;
+    /* border: 2px solid #0641B7; */
+    color: #1e212c;
 }
